@@ -1,0 +1,85 @@
+@charset 'utf-8';
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: 'microsoft yahei', Verdana, Arial, Helvetica, sans-serif;
+	color: #333;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-size: 100%;
+	font-weight: normal;
+}
+a {
+	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+}
+img {
+	border: none;
+}
+ol,
+ul,
+li {
+	list-style: none;
+}
+input,
+textarea,
+select,
+button {
+	font-family: 'microsoft yahei', Verdana, Helvetica, Arial, sans-serif;
+	outline: none;
+	border: none;
+	display: inline-block;
+	vertical-align: middle;
+}
+table {
+	border-collapse: collapse;
+}
+// @include s-overflow;
+@mixin s-overflow() {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	-ms-text-overflow: ellipsis;
+}
+
+// @include m-overflow(2);
+@mixin m-overflow($line) {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: -webkit-box;
+	-webkit-line-clamp: $line;
+	-webkit-box-orient: vertical;
+}
+
+// @include flex;   @include flex(column);
+@mixin flex($direction: row) {
+	display: flex;
+	display: -webkit-flex;
+	flex-direction: $direction;
+}
+
+// @mixin border-radius(10px)
+@mixin border-radius($radius) {
+	-moz-border-radius: $radius;
+	-webkit-border-radius: $radius;
+	border-radius: $radius;
+}
+
+// @include height(100%,10px);
+@mixin height($ratio, $px) {
+	height: calc(#{$ratio} - #{$px});
+}
+
+// @include width(100%,10px);
+@mixin width($ratio, $px) {
+	width: calc(#{$ratio} - #{$px});
+}
