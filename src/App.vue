@@ -2,9 +2,10 @@
   <div id="app">
     <div id="header">
       <div class="header-nav">
-        <router-link v-for="(item,index) in navlist" tag="div" exact :to="item.path" v-text="item.name"></router-link>
+        <router-link v-for="(item,index) in navlist" :key="index" tag="div" exact :to="item.path" v-text="item.name"></router-link>
       </div>
     </div>
+      <button v-zyjtooltip>设计大咖很健康的哈数据库</button>
     <router-view/>
   </div>
 </template>
@@ -39,6 +40,10 @@ export default {
 #app{
   width: 100%;
   height: 100%;
+  button{
+    width: 100px;
+    @include s-overflow;
+  }
   #header{
     height: 122px;
     background: url(assets/img/nav-bg.png) no-repeat;

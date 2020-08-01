@@ -3,8 +3,7 @@ import VueRouter from 'vue-router'
 
 Vue.use(VueRouter)
 
-const routes = [
-  {
+const routes = [{
     path: '/',
     name: 'Person',
     component: () => import('@views/Person.vue')
@@ -25,5 +24,8 @@ const routes = [
 const router = new VueRouter({
   routes
 })
-
+const originalReplace = VueRouter.prototype.replace
+VueRouter.prototype.replace = function replace(location) {
+  return originalReplace.call(this, location).catch(err => err)
+}
 export default router
