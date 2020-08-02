@@ -5,11 +5,12 @@
         <router-link v-for="(item,index) in navlist" :key="index" tag="div" exact :to="item.path" v-text="item.name"></router-link>
       </div>
     </div>
-      <button v-zyjtooltip>设计大咖很健康的哈数据库</button>
+      <button v-zyjtooltip @click="show">设计大咖很健康的哈数据库</button>
     <router-view/>
   </div>
 </template>
 <script>
+  import hello from '@com/HelloWorld'
 export default {
   data() {
     return {
@@ -30,9 +31,37 @@ export default {
     };
   },
   mounted() {
+
+
+    this.$zyjdialog.subPop({
+      content: hello,
+      id: "hello",
+      initWidth: 450,
+      initHeight: 450,
+      left: 400,
+      top: 400,
+      options: {
+        closeCallback:this.close
+      }
+    });
   },
   methods: {
-
+    close(){
+      console.log('我被关闭了');
+    },
+    show(){
+      this.$zyjdialog.subPop({
+        content: hello,
+        id: "hello",
+        initWidth: 450,
+        initHeight: 450,
+        left: 200,
+        top: 200,
+        options: {
+          closeCallback:this.close
+        }
+      });
+    }
   }
 };
 </script>
