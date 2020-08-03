@@ -1,4 +1,7 @@
 <template>
+  <!--
+   this.$loading.show('拼命加载中','balls||bars||spin')
+   -->
 	<div v-if="isShowLoading" class="loading-container">
 		<div class="loading-box">
 

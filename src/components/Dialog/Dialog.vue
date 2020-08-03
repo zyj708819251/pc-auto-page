@@ -1,4 +1,17 @@
 <template>
+	<!--
+    this.$zyjdialog.subPop({
+      content: hello,
+      id: "hello",
+      initWidth: 450,
+      initHeight: 450,
+      left: 400,
+      top: 400,
+      options: {
+        closeCallback:this.close
+      }
+    });
+	 -->
   <div class="zyj-dialog"
   data-name="zyj-dialog"
        v-bind:style="{width:initWidth+'px',height:initHeight+'px',top:top+'px',left:left+'px',zIndex:zIndex}"
