@@ -75,8 +75,7 @@ export default {
   }
   #header{
     height: 122px;
-    background: url(assets/img/nav-bg.png) no-repeat;
-    background-size: 100% auto;
+    background: #2a7fef;
     position: relative;
     .header-nav{
       position: absolute;

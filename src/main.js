@@ -10,6 +10,9 @@ Vue.config.productionTip = false
 //自适应
 import '@utils/auto-rem'
 
+//缩放
+import '@utils/scale'
+
 //QS
 import qs from 'qs'
 Vue.prototype.$qs = qs;
