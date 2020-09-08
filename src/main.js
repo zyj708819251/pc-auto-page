@@ -35,13 +35,13 @@ Vue.use(Loading)
 //弹框
 import dialogMessage from '@com/Dialog/Dialog.js';
 Vue.prototype.$zyjdialog = dialogMessage.installDialog();
-
 //拖动
 import zyjdrag from '@utils/drag.js'
 
 
-new Vue({
+window.$vue = new Vue({
   router,
   store,
   render: h => h(App)
 }).$mount('#app')
+

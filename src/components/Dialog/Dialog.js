@@ -1,10 +1,12 @@
 import Vue from 'vue'
 import Dialog from '@com/Dialog/Dialog.vue'
-
+let component=null;
+let components=[];
 export default {
   installDialog() {
     return {
       subPop: this.installSubPop.bind(this),
+      closePop: this.closeSubPop.bind(this),
     }
   },
 
@@ -27,13 +29,24 @@ export default {
   installSubPop(options) {
     this.initBase(options);
   },
+  closeSubPop(id) {
+    for (var i = 0; i < components.length; i++) {
+      if(components[i].id==id){
+         components[i].zyjDialogFlag=false
+        break;
+      }
+    }
+  },
   initBase(options) {
+
     var message = Vue.extend(Dialog)
-    var component = new message({
+    component = new message({
       data: options
-    }).$mount()
+    }).$mount();
+    components.push(component);
     let pop = document.getElementById('zyj-dialog-' + options.id);
-    pop && document.querySelector('body').removeChild(pop);
-    document.querySelector('body').appendChild(component.$el)
+    pop && document.querySelector('#app').removeChild(pop);
+    document.querySelector('#app').appendChild(component.$el)
+    component.zyjDialogFlag=true;
   }
 }

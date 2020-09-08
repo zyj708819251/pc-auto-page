@@ -1,7 +1,7 @@
 <template>
   <div class="hello">
     <div class="zyj-dialog-header" v-zyjdrag>
-      <div class="zyj-dialog-title">1111111111</div>
+      <div class="zyj-dialog-title">222222222222</div>
       <div class="zyj-dialog-close" @click="closePop">X</div>
     </div>
     <div class="pop-body">
